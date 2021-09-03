@@ -10,6 +10,8 @@ use Spatie\ElasticsearchQueryBuilder\Sorts\Sort;
 
 class Builder
 {
+    protected Client $client;
+
     protected ?BoolQuery $query = null;
 
     protected ?AggregationCollection $aggregations = null;
@@ -28,8 +30,9 @@ class Builder
 
     protected bool $withAggregations = true;
 
-    public function __construct(protected Client $client)
+    public function __construct(Client $client)
     {
+        $this->client = $client;
     }
 
     public function addQuery(Query $query, string $boolType = 'must'): self
