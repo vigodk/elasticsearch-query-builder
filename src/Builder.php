@@ -32,7 +32,7 @@ class Builder
     {
     }
 
-    public function addQuery(Query $query, string $boolType = 'must'): static
+    public function addQuery(Query $query, string $boolType = 'must'): self
     {
         if (! $this->query) {
             $this->query = new BoolQuery();
@@ -43,7 +43,7 @@ class Builder
         return $this;
     }
 
-    public function addAggregation(Aggregation $aggregation): static
+    public function addAggregation(Aggregation $aggregation): self
     {
         if (! $this->aggregations) {
             $this->aggregations = new AggregationCollection();
@@ -54,7 +54,7 @@ class Builder
         return $this;
     }
 
-    public function addSort(Sort $sort): static
+    public function addSort(Sort $sort): self
     {
         if (! $this->sorts) {
             $this->sorts = new SortCollection();
@@ -88,42 +88,42 @@ class Builder
         return $this->client->search($params);
     }
 
-    public function index(string $searchIndex): static
+    public function index(string $searchIndex): self
     {
         $this->searchIndex = $searchIndex;
 
         return $this;
     }
 
-    public function size(int $size): static
+    public function size(int $size): self
     {
         $this->size = $size;
 
         return $this;
     }
 
-    public function from(int $from): static
+    public function from(int $from): self
     {
         $this->from = $from;
 
         return $this;
     }
 
-    public function searchAfter(?array $searchAfter): static
+    public function searchAfter(?array $searchAfter): self
     {
         $this->searchAfter = $searchAfter;
 
         return $this;
     }
 
-    public function fields(array $fields): static
+    public function fields(array $fields): self
     {
         $this->fields = array_merge($this->fields ?? [], $fields);
 
         return $this;
     }
 
-    public function withoutAggregations(): static
+    public function withoutAggregations(): self
     {
         $this->withAggregations = false;
 

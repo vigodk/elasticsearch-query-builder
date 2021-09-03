@@ -10,16 +10,13 @@ class TopHitsAggregation extends Aggregation
 
     protected ?Sort $sort = null;
 
-    public static function create(string $name, int $size, ?Sort $sort = null): static
+    public static function create(string $name, int $size, ?Sort $sort = null): self
     {
         return new self($name, $size, $sort);
     }
 
-    public function __construct(
-        string $name,
-        int $size,
-        ?Sort $sort = null
-    ) {
+    public function __construct(string $name, int $size, ?Sort $sort = null)
+    {
         $this->name = $name;
         $this->size = $size;
         $this->sort = $sort;

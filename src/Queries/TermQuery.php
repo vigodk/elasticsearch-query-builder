@@ -8,7 +8,7 @@ class TermQuery implements Query
 
     protected string $value;
 
-    public static function create(string $field, string $value): static
+    public static function create(string $field, string $value): self
     {
         return new self($field, $value);
     }

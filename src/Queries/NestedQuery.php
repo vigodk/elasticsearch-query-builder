@@ -13,10 +13,8 @@ class NestedQuery implements Query
         return new self($path, $query);
     }
 
-    public function __construct(
-        string $path,
-        Query $query
-    ) {
+    public function __construct(string $path, Query $query)
+    {
         $this->path = $path;
         $this->query = $query;
     }

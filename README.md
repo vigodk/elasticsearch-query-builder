@@ -1,3 +1,7 @@
+# This package was forked because it requires PHP 8, and we are using PHP 7.4 when we upgrades to PHP 8 or above this forked should be deleted.
+
+
+
 # Build and execute ElasticSearch queries using a fluent PHP API
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/elasticsearch-query-builder.svg?style=flat-square)](https://packagist.org/packages/spatie/elasticsearch-query-builder)
